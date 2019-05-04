@@ -27,9 +27,11 @@ CONFIG_ACCESS_KEY=world
 - Get a jwt token from port 8888  
 `curl -i http://localhost:8080/jwt -d ''`
 
-- Use test the calculation: (Please replace the **`JWT token`** with the one generated just now.)
+- Use the `jwt token` generated just now to test the calculation:
 ```
 curl -i http://localhost:8080/calc/MyFormula \
  -d '{"x":23}' -H "Content-Type: application/json" \
  -H "X-JWT-HEADER: eyJhbGciOiJFUzI1NiJ9.eyJuYmYiOjE1NTY5NzQ3NTMsImV4cCI6MTU1Njk3NTM1M30.PlFZ5rxp5fUIbrAmhEHUFj4sHuSyek7K0737okeVLopLMtk5N0ypvxx-WlIvKXnMig5czP1MtioW4R6PG3JW3A"
 ```
+
+-- End of document

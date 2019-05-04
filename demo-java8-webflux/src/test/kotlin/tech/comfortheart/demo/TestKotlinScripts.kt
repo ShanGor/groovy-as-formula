@@ -26,6 +26,7 @@ import org.luaj.vm2.lib.jse.LuajavaLib
 import org.luaj.vm2.lib.PackageLib
 import org.luaj.vm2.lib.jse.JseBaseLib
 import org.mariuszgromada.math.mxparser.Function
+import tech.comfortheart.Application
 import java.util.concurrent.CountDownLatch
 
 

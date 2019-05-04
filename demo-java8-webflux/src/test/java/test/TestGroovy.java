@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.Resource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.testng.reporters.Files;
-import tech.comfortheart.demo.Application;
+import tech.comfortheart.Application;
 import tech.comfortheart.utils.Timer;
 
 import javax.script.*;

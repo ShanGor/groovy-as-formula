@@ -34,8 +34,10 @@ class TestController {
         return jwtGeneratorService.generateJwt();
     }
 
-    @PostMapping("/calc/{script}")
-    fun calculate(@PathVariable("script") scriptName: String, @RequestBody params: Map<String, Any>): String {
+    @PostMapping("/calc/{script}/{var}")
+    fun calculate(@PathVariable("script") scriptName: String,
+                  @PathVariable("var") variable: String,
+                  @RequestBody params: Map<String, Any>): Map<String, Any> {
         val timer = Timer()
         val yourScript = groovyFormulas.getValue(scriptName)
 
@@ -44,6 +46,8 @@ class TestController {
         yourScript.eval(bindings)
 
         logger.info("Calculation done in ${timer.elapsedMillisecs()} milliseconds!")
-        return bindings.get("f").toString()
+        val map = LinkedHashMap<String, Any>()
+        map.put(variable, bindings.get(variable)!!)
+        return map
     }
 }

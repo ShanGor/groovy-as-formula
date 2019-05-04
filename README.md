@@ -29,9 +29,9 @@ CONFIG_ACCESS_KEY=world
 
 - Use the `jwt token` generated just now to test the calculation:
 ```
-curl -i http://localhost:8080/calc/MyFormula \
- -d '{"x":23}' -H "Content-Type: application/json" \
- -H "X-JWT-HEADER: eyJhbGciOiJFUzI1NiJ9.eyJuYmYiOjE1NTY5NzQ3NTMsImV4cCI6MTU1Njk3NTM1M30.PlFZ5rxp5fUIbrAmhEHUFj4sHuSyek7K0737okeVLopLMtk5N0ypvxx-WlIvKXnMig5czP1MtioW4R6PG3JW3A"
+curl -i http://localhost:8080/calc/MyFormula/y \
+-d '{"x":23}' -H "Content-Type: application/json" \
+-H "X-JWT-HEADER: eyJhbGciOiJFUzI1NiJ9.eyJuYmYiOjE1NTY5NzY5OTYsImV4cCI6MTU1Njk3NzU5Nn0.LSQ1DScKIkomlA1bpJKBvjJ8XsUAQJQHAUnNKS8k5bl2P6OBtGzR6PSqMt1wVZMUGHmxDFiOVLS2WxCj8rHBbQ"
 ```
 
 -- End of document

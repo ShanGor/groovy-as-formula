@@ -34,4 +34,18 @@ curl -i http://localhost:8080/calc/MyFormula/y \
 -H "X-JWT-HEADER: eyJhbGciOiJFUzI1NiJ9.eyJuYmYiOjE1NTY5NzY5OTYsImV4cCI6MTU1Njk3NzU5Nn0.LSQ1DScKIkomlA1bpJKBvjJ8XsUAQJQHAUnNKS8k5bl2P6OBtGzR6PSqMt1wVZMUGHmxDFiOVLS2WxCj8rHBbQ"
 ```
 
+# Configurations
+When you are preparing a new groovy formulas, you should configure these points:
+- If your file name is `myFormula1.groovy`, ensure you have a `myFormula1Pre.groovy` to initialize all the variables that would be given from external requester. Because when the program starts up, it will compile all the groovy scripts and execute them, if you dont define and give some initialization, it will fail to compile.  
+  For example
+  > We have `MyFormula.groovy`, which expect an `x` from external env. Then we defined a `MyFormulaPre.groovy` to provide `x=0`
+- Configure the `formula.groovy.files` in your `application.properties`.  
+  For Example:
+  > We configured below lines. The application will compile them and execute them one by one.
+  > ```
+  > # The sequence matters, because when the program starts up, it will execute each of them once, in this sequence.
+  > formula.groovy.files=Decimal.groovy, \
+  >  MyFormulaPre.groovy, MyFormula.groovy
+  > ```
+
 -- End of document
